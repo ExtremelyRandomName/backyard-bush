@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bxy4rkud15vep"]
+
+[ext_resource type="Texture2D" uid="uid://cjpf8vtvbb5rq" path="res://Assets/kenney_prototype-textures/Vector/texture_08.svg" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cd4h3v044y3xk" path="res://Scenes/playercontroller.tscn" id="2_bo1nx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_bo1nx"]
+sky_material = SubResource("ProceduralSkyMaterial_jjgbg")
+
+[sub_resource type="Environment" id="Environment_8gbba"]
+background_mode = 2
+sky = SubResource("Sky_bo1nx")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icf84"]
+albedo_texture = ExtResource("1_jjgbg")
+uv1_triplanar = true
+
+[node name="Main" type="Node3D" unique_id=978811758]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1410779931]
+environment = SubResource("Environment_8gbba")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1581329637]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1764412431]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1572815265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8959155, 0)
+size = Vector3(30, 9.836831, 30)
+material = SubResource("StandardMaterial3D_icf84")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1569799641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5861497, 0)
+operation = 2
+size = Vector3(29, 10.8173, 29)
+material = SubResource("StandardMaterial3D_icf84")
+
+[node name="Player" parent="." unique_id=101236434 instance=ExtResource("2_bo1nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
