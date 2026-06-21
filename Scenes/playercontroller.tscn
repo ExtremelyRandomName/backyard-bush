@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://cd4h3v044y3xk"]
 
 [ext_resource type="Script" uid="uid://4a57ijjwlwjx" path="res://Scenes/playercontroller.gd" id="1_6gcc1"]
+[ext_resource type="Texture2D" uid="uid://r440ayrempdo" path="res://Assets/kenney_prototype-textures/PNG/Green/texture_05.png" id="2_j4jdn"]
 [ext_resource type="Script" uid="uid://bwng03vtxgs8o" path="res://Scenes/camera_system.gd" id="2_usobg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_icf84"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icf84"]
+albedo_texture = ExtResource("2_j4jdn")
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_icf84"]
+material = SubResource("StandardMaterial3D_icf84")
 
 [node name="Player" type="CharacterBody3D" unique_id=101236434]
 collision_layer = 2

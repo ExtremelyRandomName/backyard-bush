@@ -19,7 +19,16 @@ glow_enabled = true
 albedo_texture = ExtResource("1_jjgbg")
 uv1_triplanar = true
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_icf84"]
+top_radius = 1.0161133
+bottom_radius = 1.0161133
+height = 2.5917969
+
+[sub_resource type="PrismMesh" id="PrismMesh_icf84"]
+
 [node name="Main" type="Node3D" unique_id=978811758]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=190323010]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1410779931]
 environment = SubResource("Environment_8gbba")
@@ -44,3 +53,11 @@ material = SubResource("StandardMaterial3D_icf84")
 
 [node name="Player" parent="." unique_id=101236434 instance=ExtResource("2_bo1nx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1029548809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5670948, -5.4579887)
+mesh = SubResource("CylinderMesh_icf84")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1005832071]
+transform = Transform3D(2.430077, 0, 0, 0, 1.684444, 0, 0, 0, 9.472128, 9.44954, 1.1018887, -4.7683716e-07)
+mesh = SubResource("PrismMesh_icf84")
