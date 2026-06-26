@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjpf8vtvbb5rq" path="res://Assets/kenney_prototype-textures/Vector/texture_08.svg" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cd4h3v044y3xk" path="res://Scenes/playercontroller.tscn" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://cwq7q703813s3" path="res://Assets/kenney_prototype-textures/PNG/Orange/texture_09.png" id="3_8gbba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,6 +26,14 @@ bottom_radius = 1.0161133
 height = 2.5917969
 
 [sub_resource type="PrismMesh" id="PrismMesh_icf84"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
+albedo_texture = ExtResource("3_8gbba")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_icf84"]
+material = SubResource("StandardMaterial3D_jjvhh")
+size = Vector3(4.546875, 4.74646, 1)
 
 [node name="Main" type="Node3D" unique_id=978811758]
 
@@ -61,3 +70,7 @@ mesh = SubResource("CylinderMesh_icf84")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1005832071]
 transform = Transform3D(2.430077, 0, 0, 0, 1.684444, 0, 0, 0, 9.472128, 9.44954, 1.1018887, -4.7683716e-07)
 mesh = SubResource("PrismMesh_icf84")
+
+[node name="SceneChangePoint" type="MeshInstance3D" parent="." unique_id=1417368553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7734375, 2.5497727, 13.729116)
+mesh = SubResource("BoxMesh_icf84")
