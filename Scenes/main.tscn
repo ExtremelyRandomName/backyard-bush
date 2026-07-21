@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cjpf8vtvbb5rq" path="res://Assets/kenney_prototype-textures/Vector/texture_08.svg" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cd4h3v044y3xk" path="res://Scenes/playercontroller.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://b4r8kto5d4una" path="res://Assets/kenney_prototype-textures/PNG/Orange/texture_02.png" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://u6p87t4uapws" path="res://Scenes/dialogue_trigger.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://ch6pa4pstoy2r" path="res://Scenes/dialogue_ui.tscn" id="5_kry3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -76,8 +74,6 @@ material = SubResource("StandardMaterial3D_icf84")
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=101236434 instance=ExtResource("2_bo1nx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="dialogue_ui" parent="." unique_id=1869018271 instance=ExtResource("5_kry3j")]
-
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=65008869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9194369, 13.786938)
 
@@ -97,6 +93,3 @@ mesh = SubResource("CapsuleMesh_7puur")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dummy" unique_id=1103238830]
 shape = SubResource("CapsuleShape3D_mrc6h")
-
-[node name="dialogue_trigger" parent="." unique_id=1255942099 instance=ExtResource("4_jjvhh")]
-transform = Transform3D(3.5408328, 0, 0, 0, 1, 0, 0, 0, 3.369694, 7.782625, 0.7550286, -3.0302663)
