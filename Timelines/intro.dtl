@@ -1,0 +1,5 @@
+elder: Hello, welcome to the island. I hope the journey wasn’t too tiresome.
+elder: Allow me to show you around before you get settled, everyone is so curious about the new comer in town!
+elder: Before we set off, remind me of your name again dear?
+[text_input text="Please enter your name:" var="Intro.player_name" placeholder="name"]
+TP: Thank you, it’s wonderful to finally meet you elder! Where to first?
